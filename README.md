@@ -1,20 +1,46 @@
-##  TDD Ruby on Rails
+##  Rails-API
+#### Diagrama 
+![tdd-ruby](public/diagrama.png)
 
-API siguiendo el desarrollo guiado por pruebas (TDD).
+### Iniciar el proyecto
+```
+- Clonar repositorio
+- bundle install
+- rails db:setup
+- rails server
+```
 
-### Diagrama relacional
-![tdd-ruby](https://jkevinfg.com/img/projects/diagramabd.png)
 
-
+#### Endpoints
+```
+GET /posts?search=title (optional query)
+```
+```
+GET /posts/{id}
+```
+```
+GET /posts/unpublished
+```
+```
+POST /posts
+```
+```
+PUT /posts/{id}
+```
 Gemas utilizadas:
-* Rspec (gem testing)
-* Factory bot (crear modelos falsos)
-* Faker (generar datos fake)
+* rspec (gem testing)
+* factory bot (crear modelos falsos)
+* faker (generar datos fake)
+* letter_opener (visualizar mailer)
 
 Adicionalmente implementé:
+* Caching (busqueda de un post)
 * ActiveJob (trabajo en segundo plano)
 * ActiveMailer (enviar reporte)
-
+```
+#envio de reporte 
+PostReportMailer.post_report(User.first, Post.first, PostReport.generate(Post.first)).deliver_now
+```
 
 
 
