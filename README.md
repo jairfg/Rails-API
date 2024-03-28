@@ -1,10 +1,10 @@
 ##  Rails-API
-#### Diagrama 
+#### Diagram 
 ![tdd-ruby](public/diagrama.png)
 
-### Iniciar el proyecto
+### Start the project
 ```
-- Clonar repositorio
+- Clone repository
 - bundle install
 - rails db:setup
 - rails server
@@ -27,18 +27,18 @@ POST /posts
 ```
 PUT /posts/{id}
 ```
-Gemas utilizadas:
-* rspec (gem testing)
-* factory bot (crear modelos falsos)
-* faker (generar datos fake)
-* letter_opener (visualizar mailer)
+Gems used:
+* rspec-rails (integration with RSpec, testing framework)
+* factory bot (creation of test data for models)
+* faker (generate fake data)
+* letter_opener (view mailer)
 
-Adicionalmente implementé:
-* Caching (busqueda de un post)
-* ActiveJob (trabajo en segundo plano)
-* ActiveMailer (enviar reporte)
+Additionally I implemented:
+* Caching (search for a post)
+* ActiveJob (background work)
+* ActiveMailer (send report)
 ```
-#envio de reporte 
+# report sending 
 PostReportMailer.post_report(User.first, Post.first, PostReport.generate(Post.first)).deliver_now
 ```
 
